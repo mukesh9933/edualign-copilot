@@ -69,3 +69,59 @@ By employing **Asymmetric Vector Indexing**, **Cross-Encoder Semantic Re-ranking
              - Interactive Visual Audits
              - Expandable JSON Lesson Plans
              - Downloadable Markdown Report
+
+
+🛠️ Tech Stack
+LLM Engine: Ollama (llama3.2 / llama3.2:1b)
+
+Embedding Model: nomic-embed-text
+
+Semantic Re-ranking: cross-encoder/ms-marco-MiniLM-L-6-v2 (via sentence-transformers)
+
+Orchestration Framework: LlamaIndex
+
+Data Validation & Schemas: Pydantic v2
+
+Document Processing: pypdf
+
+Web Interface: Streamlit
+
+🚀 Quickstart Guide
+Prerequisites
+Python 3.10 or higher
+
+Ollama installed and running locally
+
+git clone [https://github.com/](https://github.com/)<mukesh99>/edualign-copilot.git
+cd edualign-copilot
+
+
+🧪 Evaluation & Benchmark Suite
+EduAlign includes a dedicated ground-truth benchmarking harness (evaluate.py) to systematically measure audit precision against edge-case pedagogical scenarios.
+
+To run the compliance benchmark:
+
+Benchmark Metric Example
+Plaintext
+=======================================================
+ 🧪 Running EduAlign Copilot Evaluation Benchmark
+=======================================================
+[Test Case #1] Light-dependent reactions (Full)     -> ✅ PASS (FULL)
+[Test Case #2] Calvin Cycle mechanisms (Partial)   -> ✅ PASS (PARTIAL)
+[Test Case #3] Cellular respiration (Gap)           -> ✅ PASS (GAP)
+=======================================================
+📊 Final Benchmark Accuracy: 100.00% (3/3 passed)
+=======================================================
+
+
+edualign-copilot/
+├── app.py                     # Primary Streamlit application & pipeline orchestrator
+├── evaluate.py                # Standalone evaluation & accuracy benchmark script
+├── requirements.txt           # Environment dependencies and pinned versions
+├── .gitignore                 # Artifact exclusion rules (venv, cache, local data)
+└── README.md                  # System documentation and architecture breakdown
+
+📄 Output Schema Example
+When a standard is marked as PARTIAL or GAP, EduAlign produces structured, actionable pedagogical outputs:
+
+👨‍💻 Author Mukesh Mishra
